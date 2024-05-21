@@ -1,5 +1,5 @@
 // Paso 1: Registro de Usuario
-const username = localStorage.getItem('username');
+let username = localStorage.getItem('username');
 if (!username) {
   username = prompt("Por favor, ingresa tu nombre:");
   localStorage.setItem('username', username);
