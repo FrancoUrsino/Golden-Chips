@@ -19,14 +19,14 @@ document.write('<br><button id="option3">plan para ahorrar a corto, medio o larg
 
 document.getElementById('option1').addEventListener('click', function() {
   // Plan de ahorro 50/30/20
-  var income = parseFloat(prompt("Por favor, ingresa tus ingresos mensuales:"));
+  let income = parseFloat(prompt("Por favor, ingresa tus ingresos mensuales:"));
   while (isNaN(income)) {
     income = parseFloat(prompt("No ingresaste un número, colocalo sin signos($ , .). Ingresa tus ingresos mensuales:"));
   }
 
-  var needs = income * 0.50;
-  var wants = income * 0.30;
-  var savings = income * 0.20;
+  let needs = income * 0.50;
+  let wants = income * 0.30;
+  let savings = income * 0.20;
 
   document.write('<h2>Plan de ahorro 50/30/20</h2>');
   document.write(`<p>Ingresos mensuales: $${income.toFixed(2)}</p>`);
@@ -39,22 +39,22 @@ document.getElementById('option1').addEventListener('click', function() {
 
 document.getElementById('option2').addEventListener('click', function() {
   // Balance general de finanzas
-  var income = parseFloat(prompt("Ingresa tus ingresos mensuales:"));
+  let income = parseFloat(prompt("Ingresa tus ingresos mensuales:"));
   while (isNaN(income)) {
     income = parseFloat(prompt("No ingresaste un número, colocalo sin signos($ , .). Ingresa tus ingresos mensuales:"));
   }
 
-  var expenses = parseFloat(prompt("Por favor, ingresa tus gastos mensuales:"));
+  let expenses = parseFloat(prompt("Por favor, ingresa tus gastos mensuales:"));
   while (isNaN(expenses)) {
     expenses = parseFloat(prompt("No ingresaste un número, colocalo sin signos($ , .). Ingresa tus gastos mensuales:"));
   }
 
-  var hasSavings = prompt("¿Tienes ahorros actuales? Ingresa 1 para Sí o 2 para No:");
+  let hasSavings = prompt("¿Tienes ahorros actuales? Ingresa 1 para Sí o 2 para No:");
   while (hasSavings !== "1" && hasSavings !== "2") {
     hasSavings = prompt("Ingresaste una opción no válida. ¿Tienes ahorros actuales? Ingresa 1 para Sí o 2 para No:");
   }
 
-  var savings = 0;
+  let savings = 0;
   if (hasSavings === "1") {
     savings = parseFloat(prompt("Por favor, ingresa tus ahorros actuales:"));
     while (isNaN(savings)) {
@@ -62,12 +62,12 @@ document.getElementById('option2').addEventListener('click', function() {
     }
   }
 
-  var hasInvestments = prompt("¿Tienes inversiones actuales? Ingresa 1 para Sí o 2 para No:");
+  let hasInvestments = prompt("¿Tienes inversiones actuales? Ingresa 1 para Sí o 2 para No:");
   while (hasInvestments !== "1" && hasInvestments !== "2") {
     hasInvestments = prompt("Ingresaste una opción no válida. ¿Tienes inversiones actuales? Ingresa 1 para Sí o 2 para No:");
   }
 
-  var investments = 0;
+  let investments = 0;
   if (hasInvestments === "1") {
     investments = parseFloat(prompt("Por favor, ingresa tus inversiones actuales:"));
     while (isNaN(investments)) {
@@ -75,8 +75,8 @@ document.getElementById('option2').addEventListener('click', function() {
     }
   }
 
-  var balance = income - expenses;
-  var totalAssets = savings + investments;
+  let balance = income - expenses;
+  let totalAssets = savings + investments;
 
   document.write('<h2>Balance general de finanzas</h2>');
   document.write(`<p>Ingresos mensuales: $${income.toFixed(2)}</p>`);
@@ -91,18 +91,18 @@ document.getElementById('option2').addEventListener('click', function() {
 
 document.getElementById('option3').addEventListener('click', function() {
   // Plan para ahorrar a corto, medio o largo plazo
-  var item = prompt("¿Qué objeto deseas comprar?");
-  var itemPrice = parseFloat(prompt("¿Cuál es el precio del objeto?"));
+  let item = prompt("¿Qué objeto deseas comprar?");
+  let itemPrice = parseFloat(prompt("¿Cuál es el precio del objeto?"));
   while (isNaN(itemPrice)) {
     itemPrice = parseFloat(prompt("No ingresaste un número, colocalo sin signos($ , .). ¿Cuál es el precio del objeto?"));
   }
 
-  var hasSavings = prompt("¿Tienes ahorros actuales? Ingresa 1 para Sí o 2 para No:");
+  let hasSavings = prompt("¿Tienes ahorros actuales? Ingresa 1 para Sí o 2 para No:");
   while (hasSavings !== "1" && hasSavings !== "2") {
     hasSavings = prompt("Ingresaste una opción no válida. ¿Tienes ahorros actuales? Ingresa 1 para Sí o 2 para No:");
   }
 
-  var savings = 0;
+  let savings = 0;
   if (hasSavings === "1") {
     savings = parseFloat(prompt("Por favor, ingresa tus ahorros actuales:"));
     while (isNaN(savings)) {
@@ -110,14 +110,14 @@ document.getElementById('option3').addEventListener('click', function() {
     }
   }
 
-  var timeframe = prompt("¿En cuántos meses deseas comprar el objeto?");
-  var months = parseInt(timeframe);
+  let timeframe = prompt("¿En cuántos meses deseas comprar el objeto?");
+  let months = parseInt(timeframe);
   while (isNaN(months) || months <= 0) {
     timeframe = prompt("No ingresaste un número, colocalo sin signos($ , .). ¿En cuántos meses deseas comprar el objeto?");
     months = parseInt(timeframe);
   }
 
-  var monthlySavings = (itemPrice - savings) / months;
+  let monthlySavings = (itemPrice - savings) / months;
 
   document.write('<h2>Plan de ahorro para compra</h2>');
   document.write(`<p>Objeto a comprar: ${item}</p>`);
