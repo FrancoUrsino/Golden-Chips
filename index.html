@@ -4,15 +4,41 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <title>Document</title>
 </head>
 
 <body>
+  <header>
+    <section class="hero">
+    </section>
+  </header>
   <h1>Simulador de Planificación Financiera</h1>
 
+  <div id="app">
+    <!-- Initial Welcome Message -->
+    <div id="welcome"></div>
+  
+    <!-- Options -->
+    <div id="options">
+      <button id="option1">1. Realizar un plan de ahorro 50/30/20</button><br>
+      <button id="option2">2. Realizar un balance general de finanzas</button><br>
+      <button id="option3">3. Realizar un plan para ahorrar a corto, medio o largo plazo para la compra de un objeto</button><br>
+    </div>
+  
+    <!-- Result Section -->
+    <div id="result" class="result"></div>
+  
+    <!-- History Section -->
+    <div id="history" class="history">
+      <h2>Historial de Simulaciones</h2>
+      <ul id="historyList"></ul>
+    </div>
+  </div>
 </body>
 
-<!-- <script src="./js/script.js"></script> -->
-<script src="./js/index.js"></script>
+<script src="./js/script.js"></script>
+<!-- <script src="./js/index.js"></script> -->
 
 </html>
