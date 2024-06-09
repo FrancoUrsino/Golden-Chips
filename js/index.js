@@ -80,7 +80,7 @@ function loadHistory() {
 // Función para filtrar el historial
 function filterHistory(filterTitle) {
   let history = JSON.parse(localStorage.getItem('history')) || [];
-  const filteredHistory = history.filter(entry => entry.title === filterTitle);
+  const filteredHistory = history.filter(entry => entry.title.includes(filterTitle));
   displayHistory(filteredHistory);
 }
 
@@ -88,18 +88,21 @@ function filterHistory(filterTitle) {
 function searchHistory() {
   const query = document.getElementById('searchQuery').value.toLowerCase();
   let history = JSON.parse(localStorage.getItem('history')) || [];
-  const searchedHistory = history.filter(entry => entry.content.toLowerCase().includes(query));
+  const searchedHistory = history.filter(entry => entry.title.toLowerCase().includes(query) || entry.content.toLowerCase().includes(query));
   displayHistory(searchedHistory);
 }
 
 // Inicializar historial al cargar la página
 loadHistory();
 
+// Agregar evento de búsqueda en tiempo real
+document.getElementById('searchQuery').addEventListener('input', searchHistory);
+
 // Paso 2: Opciones de planificación financiera
 document.getElementById('option1').addEventListener('click', function () {
   document.getElementById('options').style.display = 'none';
 
-  const result = `
+  const userResult = `
     <h2>Plan de ahorro 50/30/20</h2>
     <label for="income">Ingresos mensuales:</label>
     <input type="number" id="income"><br><br>
@@ -107,7 +110,7 @@ document.getElementById('option1').addEventListener('click', function () {
     <div id="resultOption1"></div>
   `;
 
-  document.getElementById('result').innerHTML = result;
+  document.getElementById('result').innerHTML = userResult;
 
   document.getElementById('calculateOption1').addEventListener('click', function () {
     const income = document.getElementById('income').value;
@@ -142,7 +145,7 @@ document.getElementById('option1').addEventListener('click', function () {
 document.getElementById('option2').addEventListener('click', function () {
   document.getElementById('options').style.display = 'none';
 
-  const result = `
+  const userResult = `
     <h2>Balance general de finanzas</h2>
     <label for="income">Ingresos mensuales:</label>
     <input type="number" id="income"><br><br>
@@ -156,7 +159,7 @@ document.getElementById('option2').addEventListener('click', function () {
     <div id="resultOption2"></div>
   `;
 
-  document.getElementById('result').innerHTML = result;
+  document.getElementById('result').innerHTML = userResult;
 
   document.getElementById('calculateOption2').addEventListener('click', function () {
     const income = document.getElementById('income').value;
@@ -195,7 +198,7 @@ document.getElementById('option2').addEventListener('click', function () {
 document.getElementById('option3').addEventListener('click', function () {
   document.getElementById('options').style.display = 'none';
 
-  const result = `
+  const userResult = `
     <h2>Plan para ahorrar para la compra de un objeto</h2>
     <label for="item">Objeto a comprar:</label>
     <input type="text" id="item"><br><br>
@@ -209,7 +212,7 @@ document.getElementById('option3').addEventListener('click', function () {
     <div id="resultOption3"></div>
   `;
 
-  document.getElementById('result').innerHTML = result;
+  document.getElementById('result').innerHTML = userResult;
 
   document.getElementById('calculateOption3').addEventListener('click', function () {
     const item = document.getElementById('item').value;
@@ -237,8 +240,8 @@ document.getElementById('option3').addEventListener('click', function () {
 
     showRestartButton();
 
-    addSimulationToHistory(`Plan para ahorrar para ${item}`, `Precio: $${itemPrice}, Ahorros: $${savings}, Período: ${goalPeriod} meses, Ahorro mensual: $${monthlySavings.toFixed(2)}`);
+    addSimulationToHistory(`Plan para ahorrar para la compra de ${item}`, `Precio: $${itemPrice}, Ahorros: $${savings}, Período: ${goalPeriod} meses, Ahorro mensual: $${monthlySavings.toFixed(2)}`);
 
-    showChart(`Plan para ahorrar para ${item}`, ['Ahorros actuales', 'Ahorro mensual necesario'], [parseFloat(savings), monthlySavings], 'chart3');
+    showChart(`Plan para ahorrar para la compra de ${item}`, ['Ahorros actuales', 'Ahorro mensual necesario'], [parseFloat(savings), monthlySavings], 'chart3');
   });
 });
