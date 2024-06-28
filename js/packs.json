@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "name": "Pack pequeño",
+    "img": "../assets/pack1.png",
+    "price": 3000,
+    "chips": 100,
+    "quan": 1
+  },
+  {
+    "id": 2,
+    "name": "Pack mediano",
+    "img": "../assets/pack2.png",
+    "price": 12599,
+    "chips": 500,
+    "quan": 1
+  },
+  {
+    "id": 3,
+    "name": "Pack rico",
+    "img": "../assets/pack3.png",
+    "price": 24999,
+    "chips": 1000,
+    "quan": 1
+  },
+  {
+    "id": 4,
+    "name": "Pack millonario",
+    "img": "../assets/pack4.png",
+    "price": 75000,
+    "chips": 5000,
+    "quan": 1
+  },
+  {
+    "id": 5,
+    "name": "Pack infinity",
+    "img": "../assets/pack5.png",
+    "price": 135000,
+    "chips": 10000,
+    "quan": 1
+  }
+]

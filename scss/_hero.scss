@@ -1,0 +1,37 @@
+.hero {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../assets/casinoHero.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10em;
+
+    &--title {
+      display: flex;
+      text-align: center;
+      justify-self: center;
+      font-size: 5rem;
+      font-weight: bold;
+      color: rgba(255, 255, 255, 0.25);
+      text-shadow: 1px 2px 4px $primaryColor;
+      -webkit-text-stroke: 1px rgba(255, 255, 255, 0.4);
+    }
+
+    &--text {
+      color: $secondaryColor;
+      width: 80%;
+      margin: 3em auto;
+      display: flex;
+      justify-content: center;
+      text-align: center;
+    }
+  }
+}

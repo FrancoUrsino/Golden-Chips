@@ -1,0 +1,55 @@
+.slot-machine {
+  text-align: center;
+}
+
+.reels {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  overflow: hidden;
+  height: 50px;
+  width: 170px;
+  border: 2px solid #000;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+.reel {
+  font-size: 2em;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 10px;
+}
+
+.play-slot {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.spin-animation {
+  animation: spin 2s linear infinite;
+}
+
+.spin-reel1 {
+  animation: spin 1s linear infinite;
+}
+
+.spin-reel2 {
+  animation: spin 2s linear infinite 0.3s;
+}
+
+.spin-reel3 {
+  animation: spin 2.5s linear infinite 0.8s;
+}
+
+@keyframes spin {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-100%); }
+}
