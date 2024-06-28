@@ -245,7 +245,7 @@ p {
   flex-direction: column;
   align-items: center;
   color: rgb(178, 162, 61);
-  background-color: rgba(133, 128, 128, 0.774);
+  background-color: rgb(37, 37, 37);
   backdrop-filter: blur(4px);
   position: fixed;
   overflow: hidden;
@@ -318,10 +318,11 @@ p {
   border-radius: 15px;
   padding: 3px 7px;
   color: rgb(200, 200, 200);
+  background-color: rgb(37, 37, 37);
 }
 .total__container--btn:hover {
-  border: 1px solid rgb(37, 37, 37);
-  color: rgb(37, 37, 37);
+  border: 1px solid rgb(178, 162, 61);
+  color: rgb(178, 162, 61);
 }
 
 .more,
@@ -593,6 +594,65 @@ button:disabled {
   cursor: not-allowed;
 }
 
+.chips {
+  width: 100%;
+  display: grid;
+  overflow: hidden;
+}
+.chips__title {
+  display: flex;
+  justify-content: center;
+  font-size: 2.3rem;
+  color: rgb(37, 37, 37);
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-weight: 400;
+  margin: 10px 0;
+}
+.chips__container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(360px, auto));
+  gap: 1.5em;
+  justify-content: center;
+  margin: 10px 0;
+}
+.chips__container--card {
+  background-color: rgb(37, 37, 37);
+  border: 3px solid rgb(178, 162, 61);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  max-width: 300px;
+  height: 400px;
+  margin: 20px;
+  display: flex;
+}
+.chips__container--card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+.chips__container--card--container .img {
+  justify-self: center;
+  width: 100px;
+  height: 50%;
+  border-bottom: 1px solid rgb(178, 162, 61);
+}
+.chips__container--card--container .front__container {
+  padding: 20px;
+}
+.chips__container--card--container .front__container--title {
+  font-size: 1.5em;
+  color: rgb(178, 162, 61);
+  margin-bottom: 10px;
+}
+.chips__container--card--container .front__container--price {
+  font-size: 1.2em;
+  color: rgb(200, 200, 200);
+  font-weight: bold;
+}
+.chips__buyChip {
+  background-color: rgb(37, 37, 37);
+}
+
 .footer {
   width: 100%;
   margin: 30px 0 10px 0;
@@ -743,65 +803,6 @@ button:disabled {
 .filters__container--btn.active {
   background-color: rgb(200, 200, 200);
   color: rgb(37, 37, 37);
-}
-
-.chips {
-  width: 100%;
-  display: grid;
-  overflow: hidden;
-}
-.chips__title {
-  display: flex;
-  justify-content: center;
-  font-size: 2.3rem;
-  color: rgb(37, 37, 37);
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  font-weight: 400;
-  margin: 10px 0;
-}
-.chips__container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(360px, auto));
-  gap: 1.5em;
-  justify-content: center;
-  margin: 10px 0;
-}
-.chips__container--card {
-  background-color: rgb(37, 37, 37);
-  border: 3px solid rgb(178, 162, 61);
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  overflow: hidden;
-  max-width: 300px;
-  height: 400px;
-  margin: 20px;
-  display: flex;
-}
-.chips__container--card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-}
-.chips__container--card--container .img {
-  justify-self: center;
-  width: 100px;
-  height: 50%;
-  border-bottom: 1px solid rgb(178, 162, 61);
-}
-.chips__container--card--container .front__container {
-  padding: 20px;
-}
-.chips__container--card--container .front__container--title {
-  font-size: 1.5em;
-  color: rgb(178, 162, 61);
-  margin-bottom: 10px;
-}
-.chips__container--card--container .front__container--price {
-  font-size: 1.2em;
-  color: rgb(200, 200, 200);
-  font-weight: bold;
-}
-.chips__buyChip {
-  background-color: rgb(37, 37, 37);
 }
 
 /*# sourceMappingURL=style.css.map */
