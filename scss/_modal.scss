@@ -111,3 +111,50 @@
     margin-left: 3em;
   }
 }
+
+
+
+
+
+
+
+
+
+// Register & login Modal
+
+.auth-modal{
+  background-color: rgba(0, 0, 0, 0.409);
+
+  &-content{
+    background-color: $thirthColor;
+    border: 2px solid $secondaryColor;
+    color: $primaryColor;
+
+
+    & form{
+      display: flex;
+      flex-direction: column;
+    }
+    & button{
+      margin: 10px 0;
+      width: 40%;
+      background-color: $thirthColor;
+      color: $secondaryColor;
+      padding: 5px;
+      transition: ease-in-out 200ms;
+      border: 1px solid $secondaryColor;
+
+      &:hover{
+        color: $primaryColor;
+        border: 1px solid $primaryColor;
+      }
+    }
+    & a{
+      color: $primaryColor;
+      
+      &:hover{
+        color: $secondaryColor;
+      }
+    }
+  }
+}

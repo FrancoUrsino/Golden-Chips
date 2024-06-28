@@ -338,6 +338,38 @@ p {
     margin-left: 3em;
   }
 }
+.auth-modal {
+  background-color: rgba(0, 0, 0, 0.409);
+}
+.auth-modal-content {
+  background-color: rgb(37, 37, 37);
+  border: 2px solid rgb(178, 162, 61);
+  color: rgb(200, 200, 200);
+}
+.auth-modal-content form {
+  display: flex;
+  flex-direction: column;
+}
+.auth-modal-content button {
+  margin: 10px 0;
+  width: 40%;
+  background-color: rgb(37, 37, 37);
+  color: rgb(178, 162, 61);
+  padding: 5px;
+  transition: ease-in-out 200ms;
+  border: 1px solid rgb(178, 162, 61);
+}
+.auth-modal-content button:hover {
+  color: rgb(200, 200, 200);
+  border: 1px solid rgb(200, 200, 200);
+}
+.auth-modal-content a {
+  color: rgb(200, 200, 200);
+}
+.auth-modal-content a:hover {
+  color: rgb(178, 162, 61);
+}
+
 .hero {
   background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../assets/casinoHero.jpg);
   background-position: center;
