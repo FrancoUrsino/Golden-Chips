@@ -122,12 +122,24 @@ $card-price-color: $primaryColor;
 }
 
 
-// Definiciones de colores y fuentes (opcional)
-$card-bg-color: $thirthColor;
-$card-border-color: $secondaryColor;
-$card-shadow-color: rgba(0, 0, 0, 0.3);
-$card-title-color: $secondaryColor;
-$card-price-color: $primaryColor;
+.packs__container{
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(150px, auto));
+width: 50%;
+margin: 10px auto;
+justify-items: center;
+text-align: center;
+text-transform: uppercase;
+}
 
-
+.packs__btn{
+  margin-top: 5px;
+  
+  &--btn{
+    background-color: $thirthColor;
+    &:hover{
+      color: $secondaryColor;
+    }
+  }
+}
 

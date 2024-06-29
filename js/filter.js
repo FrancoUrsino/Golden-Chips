@@ -57,7 +57,7 @@ const searchChip = () => {
         <div class="searchChips__card--container">
         <button class="chips__card--btn" id="btnCloseSearch"><i class="bi bi-x-lg"></i></button>
           <h3 class="searchChips__card--container--title">${chipSearch.name}</h3>
-          <p class="searchChips__card--container--description">${chipSearch.desc}</p>
+          <p class="searchChips__card--container--description">Fichas:${chipSearch.chips}</p>
           <p class="searchChips__card--container--price">$${chipSearch.price}</p>
         </div>
       </div>
