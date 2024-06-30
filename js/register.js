@@ -1,38 +1,3 @@
-const updateUserChips = (newChips) => {
-  let currentUserChips = JSON.parse(localStorage.getItem('userChips')) || 0;
-  currentUserChips += newChips;
-  localStorage.setItem('userChips', JSON.stringify(currentUserChips));
-  viewChips.textContent = `Tus Fichas: ${currentUserChips}`;
-};
-
-const updateProfileView = () => {
-  if (isLoggedIn) {
-    viewProfile.style.display = 'block';
-    userChips = JSON.parse(localStorage.getItem('userChips')) || 0;
-    viewChips.textContent = `Tus Fichas: ${userChips}`;
-    loginLink.textContent = 'Cerrar sesión';
-    logoutButton.style.display = 'block';
-  } else {
-    viewProfile.style.display = 'none';
-    loginLink.textContent = 'Iniciar sesión';
-    logoutButton.style.display = 'none';
-  }
-};
-
-loginForm.addEventListener('submit', (e) => {
-  e.preventDefault();
-  const email = document.getElementById('loginEmail').value;
-  const password = document.getElementById('loginPassword').value;
-  if (email === userData.email && password === userData.password) {
-    isLoggedIn = true;
-    localStorage.setItem('isLoggedIn', JSON.stringify(isLoggedIn));
-    authModal.style.display = 'none';
-    updateProfileView();
-  } else {
-    swal('Error', 'Correo o contraseña inválidos', 'error');
-  }
-});
-
 document.addEventListener('DOMContentLoaded', () => {
   const authModal = document.getElementById('authModal');
   const closeModal = document.getElementById('closeModal');
@@ -45,25 +10,27 @@ document.addEventListener('DOMContentLoaded', () => {
   const viewChips = document.getElementById('viewChips');
   const profileLink = document.getElementById('viewProfile');
   const chipsLink = document.getElementById('viewChips');
-  const loginLink = document.getElementById('authAction');
-  const logoutButton = document.getElementById('logoutButton');
-  const cartQuant = document.getElementById('cartQuant');
 
   let isLoggedIn = JSON.parse(localStorage.getItem('isLoggedIn')) || false;
   let userData = JSON.parse(localStorage.getItem('userData')) || {};
   let userChips = JSON.parse(localStorage.getItem('userChips')) || 0;
+
+  const updateUserChips = (newChips) => {
+    let currentUserChips = JSON.parse(localStorage.getItem('userChips')) || 0;
+    currentUserChips += newChips;
+    localStorage.setItem('userChips', JSON.stringify(currentUserChips));
+    viewChips.textContent = `Tus Fichas: ${currentUserChips}`;
+  };
 
   const updateProfileView = () => {
     if (isLoggedIn) {
       viewProfile.style.display = 'block';
       userChips = JSON.parse(localStorage.getItem('userChips')) || 0;
       viewChips.textContent = `Tus Fichas: ${userChips}`;
-      loginLink.textContent = 'Cerrar sesión';
-      logoutButton.style.display = 'block';
+      authAction.textContent = 'Cerrar sesión';
     } else {
       viewProfile.style.display = 'none';
-      loginLink.textContent = 'Iniciar sesión';
-      logoutButton.style.display = 'none';
+      authAction.textContent = 'Iniciar sesión';
     }
   };
 
@@ -72,14 +39,12 @@ document.addEventListener('DOMContentLoaded', () => {
   showRegister.addEventListener('click', () => {
     loginForm.style.display = 'none';
     registerForm.style.display = 'block';
-    authAction.textContent = 'Iniciar sesión';
     authModal.style.display = 'block';
   });
 
   showLogin.addEventListener('click', () => {
     loginForm.style.display = 'block';
     registerForm.style.display = 'none';
-    authAction.textContent = 'Iniciar sesión';
     authModal.style.display = 'block';
   });
 
@@ -131,25 +96,16 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  loginLink.addEventListener('click', () => {
+  authAction.addEventListener('click', () => {
     if (isLoggedIn) {
       isLoggedIn = false;
       localStorage.setItem('isLoggedIn', JSON.stringify(isLoggedIn));
-      authModal.style.display = 'none';
       updateProfileView();
       swal('Sesión cerrada', 'Ha cerrado sesión exitosamente', 'success');
     } else {
       loginForm.style.display = 'block';
       registerForm.style.display = 'none';
-      authAction.textContent = 'Iniciar sesión';
       authModal.style.display = 'block';
     }
-  });
-
-  logoutButton.addEventListener('click', () => {
-    isLoggedIn = false;
-    localStorage.setItem('isLoggedIn', JSON.stringify(isLoggedIn));
-    updateProfileView();
-    swal('Sesión cerrada', 'Ha cerrado sesión exitosamente', 'success');
   });
 });

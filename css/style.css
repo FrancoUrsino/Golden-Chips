@@ -150,6 +150,19 @@ p {
   background-color: #f0f0f0;
 }
 
+.dropdown-menu {
+  background-color: rgb(37, 37, 37);
+  color: rgb(178, 162, 61);
+}
+
+.dropdown-item {
+  color: rgb(200, 200, 200);
+}
+.dropdown-item:hover {
+  color: rgb(178, 162, 61);
+  background-color: rgb(37, 37, 37);
+}
+
 .auth-modal {
   display: none;
   position: fixed;
@@ -271,7 +284,6 @@ p {
 }
 .modal__container .modal__cont {
   display: flex;
-  flex-direction: row;
   justify-content: space-around;
   align-items: center;
   width: 95%;
@@ -286,21 +298,26 @@ p {
   width: 120px;
   height: 100px;
 }
-.modal__container .modal__cont--Pack {
+.modal__container .modal__cont--chips {
   display: grid;
-  grid-template-columns: 2fr repeat(3, 1fr);
+  grid-template-columns: 2fr repeat(4, 1fr);
   grid-template-rows: 1fr;
   justify-content: center;
   align-items: center;
+  text-align: center;
   padding: 0 5px;
   width: 100%;
   color: rgb(178, 162, 61);
 }
-.modal__container .modal__cont--Pack--container--quan {
+.modal__container .modal__cont--chips--container--quan {
   margin-left: 3px;
 }
-.modal__container .modal__cont--Pack .modal__cont--deletePack {
+.modal__container .modal__cont--deleteChip {
+  background-color: transparent;
   color: rgb(178, 162, 61);
+}
+.modal__container .modal__cont--deleteChip:hover {
+  color: rgb(200, 200, 200);
 }
 
 .total__container {
@@ -330,6 +347,10 @@ p {
   cursor: pointer;
   display: flex;
   justify-content: center;
+}
+.more:hover,
+.less:hover {
+  color: rgb(200, 200, 200);
 }
 
 @media (max-width: 799px) {
@@ -371,7 +392,7 @@ p {
 }
 
 .hero {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../assets/hero.webp);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../assets/hero.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -478,8 +499,17 @@ p {
   flex-direction: column;
 }
 
+.game-modal h2 {
+  text-align: center;
+  margin: 5px 0;
+}
+
 .slot-machine {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .reels {
@@ -506,11 +536,14 @@ p {
 
 .play-slot {
   padding: 10px 20px;
-  background-color: #4CAF50;
-  color: white;
+  background-color: transparent;
+  color: rgb(41, 41, 41);
   border: none;
   border-radius: 5px;
   cursor: pointer;
+}
+.play-slot:hover {
+  text-shadow: 1px 1px rgb(200, 200, 200);
 }
 
 .spin-animation {
@@ -518,15 +551,15 @@ p {
 }
 
 .spin-reel1 {
-  animation: spin 1s linear infinite;
+  animation: spin 0.3s linear infinite;
 }
 
 .spin-reel2 {
-  animation: spin 2s linear infinite 0.3s;
+  animation: spin 0.5s linear infinite 0.2s;
 }
 
 .spin-reel3 {
-  animation: spin 2.5s linear infinite 0.8s;
+  animation: spin 0.8s linear infinite 0.5s;
 }
 
 @keyframes spin {
@@ -645,130 +678,6 @@ button:disabled {
   cursor: not-allowed;
 }
 
-.chips {
-  width: 100%;
-  display: grid;
-  overflow: hidden;
-}
-.chips__title {
-  display: flex;
-  justify-content: center;
-  font-size: 2.3rem;
-  color: rgb(37, 37, 37);
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  font-weight: 400;
-  margin: 10px 0;
-}
-.chips__container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(360px, auto));
-  gap: 1.5em;
-  justify-content: center;
-  margin: 10px 0;
-}
-.chips__container--card {
-  background-color: rgb(37, 37, 37);
-  border: 3px solid rgb(178, 162, 61);
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  overflow: hidden;
-  max-width: 300px;
-  height: 400px;
-  margin: 20px;
-  display: flex;
-}
-.chips__container--card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-}
-.chips__container--card--container .img {
-  justify-self: center;
-  width: 100px;
-  height: 50%;
-  border-bottom: 1px solid rgb(178, 162, 61);
-}
-.chips__container--card--container .front__container {
-  padding: 20px;
-}
-.chips__container--card--container .front__container--title {
-  font-size: 1.5em;
-  color: rgb(178, 162, 61);
-  margin-bottom: 10px;
-}
-.chips__container--card--container .front__container--price {
-  font-size: 1.2em;
-  color: rgb(200, 200, 200);
-  font-weight: bold;
-}
-.chips__buyChip {
-  background-color: rgb(37, 37, 37);
-}
-
-.footer {
-  width: 100%;
-  margin: 30px 0 10px 0;
-  bottom: 0px;
-  color: rgb(37, 37, 37);
-}
-.footer__container {
-  border-top: 1.5px solid rgb(37, 37, 37);
-  display: grid;
-  grid-template-rows: repeat(auto-fit, minmax(150px, auto));
-  justify-content: space-evenly;
-  justify-items: center;
-  align-items: center;
-}
-.footer__img {
-  object-fit: cover;
-}
-.footer__list {
-  list-style: none;
-  color: rgb(183, 179, 179);
-}
-.footer__list .footer__text2 {
-  display: none;
-}
-.footer__list .footer__text2--link {
-  text-decoration: none;
-  color: rgb(107, 107, 107);
-}
-.footer__list .footer__text2--link:hover {
-  color: rgb(37, 37, 37);
-}
-.footer__icons a {
-  text-decoration: none;
-}
-.footer__icon {
-  width: 35px;
-  height: 35px;
-  margin: 0 5px;
-}
-
-@media (min-width: 600px) {
-  .footer {
-    width: 100%;
-    margin: 30px 0;
-  }
-  .footer__img {
-    font-size: 1.5rem;
-  }
-  .footer__container {
-    border-top: 1.5px solid rgb(37, 37, 37);
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    justify-content: space-evenly;
-    justify-items: center;
-    align-items: center;
-    margin: 0 15px;
-  }
-  .footer__list {
-    list-style: none;
-    color: rgb(183, 179, 179);
-  }
-  .footer__list .footer__text2 {
-    display: block;
-  }
-}
 .searchChips__card {
   display: grid;
   grid-template-rows: repeat(2, 1fr);
@@ -874,6 +783,135 @@ button:disabled {
 }
 .packs__btn--btn:hover {
   color: rgb(178, 162, 61);
+}
+
+.chips {
+  width: 100%;
+  display: grid;
+  overflow: hidden;
+}
+.chips__title {
+  display: flex;
+  justify-content: center;
+  font-size: 2.3rem;
+  color: rgb(37, 37, 37);
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-weight: 400;
+  margin: 10px 0;
+}
+.chips__container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(360px, auto));
+  gap: 1.5em;
+  justify-content: center;
+  justify-items: center;
+  width: 100%;
+  margin: 10px 0;
+}
+.chips__container--card {
+  background-color: rgb(37, 37, 37);
+  border: 3px solid rgb(178, 162, 61);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  max-width: 300px;
+  height: 400px;
+  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+}
+.chips__container--card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+.chips__container--card--container .img {
+  justify-self: center;
+  width: 100px;
+  height: 50%;
+  border-bottom: 1px solid rgb(178, 162, 61);
+}
+.chips__container--card--container .front__container {
+  padding: 20px;
+}
+.chips__container--card--container .front__container--title {
+  font-size: 1.5em;
+  color: rgb(178, 162, 61);
+  margin-bottom: 10px;
+}
+.chips__container--card--container .front__container--price {
+  font-size: 1.2em;
+  color: rgb(200, 200, 200);
+  font-weight: bold;
+}
+.chips__buyChip {
+  background-color: rgb(37, 37, 37);
+  width: 100%;
+}
+
+.footer {
+  width: 100%;
+  margin: 30px 0 10px 0;
+  bottom: 0px;
+  color: rgb(37, 37, 37);
+}
+.footer__container {
+  border-top: 1.5px solid rgb(37, 37, 37);
+  display: grid;
+  grid-template-rows: repeat(auto-fit, minmax(150px, auto));
+  justify-content: space-evenly;
+  justify-items: center;
+  align-items: center;
+}
+.footer__img {
+  object-fit: cover;
+}
+.footer__list {
+  list-style: none;
+  color: rgb(183, 179, 179);
+}
+.footer__list .footer__text2 {
+  display: none;
+}
+.footer__list .footer__text2--link {
+  text-decoration: none;
+  color: rgb(107, 107, 107);
+}
+.footer__list .footer__text2--link:hover {
+  color: rgb(37, 37, 37);
+}
+.footer__icons a {
+  text-decoration: none;
+}
+.footer__icon {
+  width: 35px;
+  height: 35px;
+  margin: 0 5px;
+}
+
+@media (min-width: 600px) {
+  .footer {
+    width: 100%;
+    margin: 30px 0;
+  }
+  .footer__img {
+    font-size: 1.5rem;
+  }
+  .footer__container {
+    border-top: 1.5px solid rgb(37, 37, 37);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: space-evenly;
+    justify-items: center;
+    align-items: center;
+    margin: 0 15px;
+  }
+  .footer__list {
+    list-style: none;
+    color: rgb(183, 179, 179);
+  }
+  .footer__list .footer__text2 {
+    display: block;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

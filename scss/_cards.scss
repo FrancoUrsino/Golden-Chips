@@ -18,6 +18,8 @@
     grid-template-columns: repeat(auto-fit, minmax(360px, auto));
     gap: 1.5em;
     justify-content: center;
+    justify-items: center;
+    width: 100%;
     margin: 10px 0;
 
 
@@ -29,8 +31,9 @@
       overflow: hidden;
       max-width: 300px;
       height: 400px;
-      margin: 20px;
+      margin: 20px 0;
       display: flex;
+      justify-content: center;
       
 
       &:hover {
@@ -67,6 +70,6 @@
 
   &__buyChip{
     background-color: $thirthColor;
-
+    width: 100%;
   }
 }

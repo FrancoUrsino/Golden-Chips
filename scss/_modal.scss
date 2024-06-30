@@ -35,7 +35,6 @@
 
   .modal__cont {
     display: flex;
-    flex-direction: row;
     justify-content: space-around;
     align-items: center;
     width: 95%;
@@ -52,12 +51,13 @@
       }
     }
 
-    &--Pack {
+    &--chips {
       display: grid;
-      grid-template-columns: 2fr repeat(3, 1fr);
+      grid-template-columns: 2fr repeat(4, 1fr);
       grid-template-rows: 1fr;
       justify-content: center;
       align-items: center;
+      text-align: center;
       padding: 0 5px;
       width: 100%;
       color: $secondaryColor;
@@ -66,8 +66,13 @@
         margin-left: 3px;
       }
 
-      .modal__cont--deletePack {
-        color: $secondaryColor;
+    }
+    &--deleteChip {
+      background-color: transparent;
+      color: $secondaryColor;
+
+      &:hover{
+        color: $primaryColor;
       }
     }
   }
@@ -103,6 +108,10 @@
   cursor: pointer;
   display: flex;
   justify-content: center;
+
+  &:hover{
+    color: $primaryColor;
+  }
 }
 
 @media (max-width: 799px) {

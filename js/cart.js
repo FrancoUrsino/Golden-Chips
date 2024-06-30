@@ -68,7 +68,13 @@ const showModalCart = () => {
   totalPriceBuy.innerHTML = `<p class="total__container--total">Total a pagar $${modalTotal}</p><button class="total__container--btn" id="finishBuyButton">COMPRAR PAQUETES</button>`;
   modalContainer.append(totalPriceBuy);
 
-
+  const updateUserChips = (newChips) => {
+    let currentUserChips = JSON.parse(localStorage.getItem('userChips')) || 0;
+    currentUserChips += newChips;
+    localStorage.setItem('userChips', JSON.stringify(currentUserChips));
+    const viewChips = document.getElementById('viewChips');
+    viewChips.textContent = `Tus Fichas: ${currentUserChips}`;
+  };
 
 
   const finishBuyButton = document.querySelector('#finishBuyButton');

@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       localStorage.setItem('userChips', JSON.stringify(userChips));
       updateChipsBalance();
-    }, 5000);
+    }, 3000);
   };
 
   document.getElementById('spinSlot').addEventListener('click', playSlotGame);

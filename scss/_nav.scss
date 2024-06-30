@@ -136,6 +136,18 @@
   }
 }
 
+.dropdown-menu{
+  background-color: $thirthColor;
+  color: $secondaryColor;
+}
+.dropdown-item{
+  color: $primaryColor;
+  &:hover{
+    color: $secondaryColor;
+    background-color: $thirthColor;
+  }
+}
+
 
 .auth-modal {
   display: none;
