@@ -3,7 +3,7 @@
   // background-color: $thirthColor;
   text-align: center;
   color: $primaryColor;
-  overflow: hidden;
+  overflow-x: hidden;
 
   &-title{
     color: $secondaryColor;
@@ -23,12 +23,11 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
-    top: 800px;
-    left: 150px;
+    top: 700px;
+    right: 100px;
     width: 100%;
     height: 300px;
     overflow: hidden;
-    background-repeat: no-repeat;
     opacity: 0.3;
     position: absolute;
     z-index: -1;
