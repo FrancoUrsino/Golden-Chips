@@ -17,7 +17,7 @@
   <title>GoldenChips - Inicio</title>
 </head>
 
-<body>
+<body class="body">
   <header class="hero">
     <nav class="nav">
       <div class="nav__container">
@@ -36,14 +36,17 @@
               <ul class="dropdown-menu">
                 <li><a class="dropdown-item" id="viewProfile" href="#">Ver perfil</a></li>
                 <li><a class="dropdown-item" id="viewChips" href="#">Mis fichas</a></li>
-                <li><hr class="dropdown-divider"></li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
                 <li><a class="dropdown-item" id="authAction" href="#"></a></li>
               </ul>
             </li>
             <a href="#" id="closeMenu"><i class="bi bi-x-lg"></i></a>
           </ul>
         </div>
-        <p class="nav__container--cart cartID" id="cart"><i class="bi bi-cart3"></i><span id="cartQuant" class="nav__menu--cart"></span></p>
+        <p class="nav__container--cart cartID" id="cart"><i class="bi bi-cart3"></i><span id="cartQuant"
+            class="nav__menu--cart"></span></p>
         <div id="navMenu" class="nav__menuIcon"><i class="bi bi-text-indent-left" id="navMenuIcon"></i></div>
       </div>
     </nav>
@@ -96,23 +99,31 @@
     <!-- CARRITO -->
     <section id="modalContainer" class="modal__container"></section>
 
+
+    <!-- ABOUT -->
+    <section class="about">
+      <h2 class="about-title">La mejor tecnología para tu diversión</h2>
+      <p class="about-text">Una amplia variedad de slots de última generación brinda a nuestros visitantes una
+        experiencia única y la expectativa de que algo grande siempre está por suceder.</p>
+    </section>
+
     <!-- JUEGOS -->
-    <h2>Juegos</h2>
+    <h2 class="game-title">Juegos</h2>
     <div id="userChipsBalance">Tus Fichas: 0</div>
-
-    <div id="slot" class="game">
-      <h3>Slot</h3>
-      <button class="play-game" data-game="slot">Jugar Tragamonedas</button>
+    <div class="game-container">
+      <div id="slot" class="game">
+        <h3>Slot</h3>
+        <button class="play-game" data-game="slot">Jugar Tragamonedas</button>
+      </div>
+      <div id="roulette" class="game">
+        <h3>Ruleta</h3>
+        <button class="play-game" data-game="roulette">Jugar Ruleta</button>
+      </div>
+      <div id="blackjack" class="game">
+        <h3>Blackjack</h3>
+        <button class="play-game" data-game="blackjack">Jugar Blackjack</button>
+      </div>
     </div>
-    <div id="roulette" class="game">
-      <h3>Ruleta</h3>
-      <button class="play-game" data-game="roulette">Jugar Ruleta</button>
-    </div>
-    <div id="blackjack" class="game">
-      <h3>Blackjack</h3>
-      <button class="play-game" data-game="blackjack">Jugar Blackjack</button>
-    </div>
-
     <!-- Modales para juegos -->
 
     <!-- Tragamonedas Modal -->
@@ -202,15 +213,9 @@
         </li>
       </ul>
       <div class="footer__icons">
-        <a href="">
-          <img src="" alt="" class="footer__icon">
-        </a>
-        <a href="" target="_blank">
-          <img src="" alt="" class="footer__icon">
-        </a>
-        <a href="" target="_blank">
-          <img src="" alt="" class="footer__icon">
-        </a>
+        <a href="#"><i class="bi bi-suit-club footer__icon"></i></a>
+        <a href="#" target="_blank"><i class="bi bi-suit-diamond footer__icon"></i></a>
+        <a href="#" target="_blank"><i class="bi bi-suit-spade footer__icon"></i></a>
       </div>
     </div>
   </footer>

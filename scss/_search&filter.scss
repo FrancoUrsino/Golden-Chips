@@ -39,6 +39,7 @@
   }
 }
 
+
 .notOptions {
   font-size: 40px;
   margin: 2em 0;
@@ -67,6 +68,11 @@
   }
 }
 
+.searchChips__card--container--description,
+.searchChips__card--container--price{
+  color: $primaryColor;
+}
+
 .filters {
   width: 100%;
 
@@ -84,20 +90,16 @@
       border: 1px solid $primaryColor;
       border-radius: 20px;
       padding: 7px 15px;
-      color: $primaryColor;
+      color: $thirthColor;
       cursor: pointer;
 
       &.active {
-        background-color: $primaryColor;
+        background-color: $secondaryColor;
         color: $thirthColor;
+        border: 1px solid $secondaryColor;
       }
     }
   }
-}
-
-.filters__container--btn.active {
-  background-color: $primaryColor;
-  color: $thirthColor;
 }
 
 
@@ -122,3 +124,7 @@ text-transform: uppercase;
   }
 }
 
+.packs__form--container--label{
+  color: $primaryColor;
+  margin: 10px 0;
+}

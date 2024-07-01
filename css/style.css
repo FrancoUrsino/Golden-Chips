@@ -428,6 +428,7 @@ p {
 
 .body {
   overflow-x: hidden;
+  background: radial-gradient(circle, rgb(0, 0, 0) 0%, rgba(14, 14, 14, 0.938) 100%);
 }
 
 .hero__ {
@@ -440,23 +441,89 @@ p {
   overflow: hidden;
 }
 
+.about {
+  padding: 40px 0;
+  text-align: center;
+  color: rgb(200, 200, 200);
+  overflow: hidden;
+}
+.about-title {
+  color: rgb(178, 162, 61);
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 30px;
+}
+.about-text {
+  font-size: 20px;
+  margin: 10px;
+}
+.about::before {
+  content: "";
+  background: url(../assets/poker-cards-02.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  top: 800px;
+  left: 150px;
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  opacity: 0.3;
+  position: absolute;
+  z-index: -1;
+}
+@media (min-width: 780px) {
+  .about::before {
+    left: 550px;
+  }
+}
+
+.game-title {
+  color: rgb(178, 162, 61);
+  font-weight: 600;
+  text-transform: uppercase;
+  padding-left: 10px;
+}
+
+.game-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, auto));
+  justify-items: center;
+  text-align: center;
+}
+
 .game {
+  background-image: url(../assets/slotBg.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 20px;
+  width: 250px;
+  height: 340px;
   margin: 20px;
+  color: rgb(178, 162, 61);
 }
 
 #userChipsBalance {
-  margin: 20px;
+  color: rgb(200, 200, 200);
+  margin: 10px;
   font-size: 1.2em;
 }
 
 .play-game {
   padding: 10px 20px;
-  margin-top: 10px;
+  margin-top: 260px;
   cursor: pointer;
-  background-color: #5a615a;
   color: white;
+  background-color: rgb(37, 37, 37);
   border: none;
   border-radius: 5px;
+  transition: ease-in-out 0.5s;
+}
+.play-game:hover {
+  background-color: transparent;
+  color: rgb(178, 162, 61);
 }
 
 .game-modal {
@@ -735,6 +802,11 @@ button:disabled {
     font-size: 40px;
   }
 }
+.searchChips__card--container--description,
+.searchChips__card--container--price {
+  color: rgb(200, 200, 200);
+}
+
 .filters {
   width: 100%;
 }
@@ -752,17 +824,13 @@ button:disabled {
   border: 1px solid rgb(200, 200, 200);
   border-radius: 20px;
   padding: 7px 15px;
-  color: rgb(200, 200, 200);
+  color: rgb(37, 37, 37);
   cursor: pointer;
 }
 .filters__container--btn.active {
-  background-color: rgb(200, 200, 200);
+  background-color: rgb(178, 162, 61);
   color: rgb(37, 37, 37);
-}
-
-.filters__container--btn.active {
-  background-color: rgb(200, 200, 200);
-  color: rgb(37, 37, 37);
+  border: 1px solid rgb(178, 162, 61);
 }
 
 .packs__container {
@@ -785,6 +853,11 @@ button:disabled {
   color: rgb(178, 162, 61);
 }
 
+.packs__form--container--label {
+  color: rgb(200, 200, 200);
+  margin: 10px 0;
+}
+
 .chips {
   width: 100%;
   display: grid;
@@ -793,9 +866,9 @@ button:disabled {
 .chips__title {
   display: flex;
   justify-content: center;
-  font-size: 2.3rem;
-  color: rgb(37, 37, 37);
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 50px;
+  color: rgb(178, 162, 61);
+  text-transform: uppercase;
   font-weight: 400;
   margin: 10px 0;
 }
@@ -848,14 +921,18 @@ button:disabled {
   width: 100%;
 }
 
+.chips__card--btn {
+  background-color: transparent;
+}
+
 .footer {
   width: 100%;
   margin: 30px 0 10px 0;
   bottom: 0px;
-  color: rgb(37, 37, 37);
+  color: rgb(178, 162, 61);
 }
 .footer__container {
-  border-top: 1.5px solid rgb(37, 37, 37);
+  border-top: 1.5px solid rgb(178, 162, 61);
   display: grid;
   grid-template-rows: repeat(auto-fit, minmax(150px, auto));
   justify-content: space-evenly;
@@ -877,7 +954,7 @@ button:disabled {
   color: rgb(107, 107, 107);
 }
 .footer__list .footer__text2--link:hover {
-  color: rgb(37, 37, 37);
+  color: rgb(200, 200, 200);
 }
 .footer__icons a {
   text-decoration: none;
@@ -907,7 +984,7 @@ button:disabled {
   }
   .footer__list {
     list-style: none;
-    color: rgb(183, 179, 179);
+    color: rgb(178, 162, 61);
   }
   .footer__list .footer__text2 {
     display: block;

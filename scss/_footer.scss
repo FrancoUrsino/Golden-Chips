@@ -2,11 +2,11 @@
   width: 100%;
   margin: 30px 0 10px 0;
   bottom: 0px;
-  color: $thirthColor;
+  color: $secondaryColor;
 
 
   &__container {
-    border-top: 1.5px solid $thirthColor;
+    border-top: 1.5px solid $secondaryColor;
     display: grid;
     grid-template-rows: repeat(auto-fit, minmax(150px, auto));
     justify-content: space-evenly;
@@ -30,7 +30,7 @@
         color: rgb(107, 107, 107);
 
         &:hover {
-          color: $thirthColor;
+          color: $primaryColor;
         }
       }
     }
@@ -68,7 +68,7 @@
 
     &__list {
       list-style: none;
-      color: rgb(183, 179, 179);
+      color: $secondaryColor;
 
       .footer__text2 {
         display: block;
